@@ -27,7 +27,7 @@ class MembershipCard(models.Model):
     expiry_date = models.DateField()
 
     def __str__(self):
-        return f"{self.user}:{self.card_number}"
+        return f"{self.user}: {self.card_number}"
 
 
 class Workout(models.Model):
@@ -41,7 +41,7 @@ class Workout(models.Model):
     meals = models.ManyToManyField('Meal', related_name='workout_meal')
 
     def __str__(self):
-        return f"{self.user}:{self.workout_type}"
+        return f"{self.user}: {self.workout_type}"
 
 
 class Exercise(models.Model):
@@ -52,7 +52,7 @@ class Exercise(models.Model):
     weight = models.DecimalField(max_digits=5, decimal_places=2)
 
     def __str__(self):
-        return f"{self.workout}:{self.name}"
+        return f"{self.workout}: {self.name}"
 
 
 class Meal(models.Model):
